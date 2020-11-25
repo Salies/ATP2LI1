@@ -4,11 +4,11 @@ void imprime_array(int* array, int tam);
 void InverterArranjo(int *A1, int N);
 
 int main(void){
-    int arr[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    int arr[9] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-    InverterArranjo(arr, 10);
+    InverterArranjo(arr, 9);
 
-    imprime_array(arr, 10);
+    imprime_array(arr, 9);
 
     return 0;
 }
