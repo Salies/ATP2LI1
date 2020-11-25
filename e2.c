@@ -65,5 +65,3 @@ void swap(int *a, int *b){
     *a = *b;
     *b = aux;
 }
-
-//NOTA: Dá pra melhorar esse código;
