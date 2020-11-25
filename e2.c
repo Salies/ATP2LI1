@@ -44,7 +44,7 @@ void DMaiores (int *P, int N, int *M1, int *M2, int *P1, int *P2){
 
     for(; i < N; i++){
         if(P[i] > *M1){
-            swap(M1, M1);
+            swap(M1, M2);
             *M1 = P[i];
 
             *P2 = *P1;
@@ -64,4 +64,6 @@ void swap(int *a, int *b){
     aux = *a;
     *a = *b;
     *b = aux;
+
+    return;
 }
