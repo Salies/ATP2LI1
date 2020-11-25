@@ -25,43 +25,36 @@ int main(void){
 
 //NOTA: Resolução SEM ordenação
 void DMaiores (int *P, int N, int *M1, int *M2, int *P1, int *P2){
-    int i, t1, t2, aux;
-    i = t1 = t2 = 0;
-    while(t1 == t2){
-        t1 = P[i];
-        t2 = P[i + 1];
+    int i;
+    i = *M1 = *M2 = 0;
+    while(*M1 == *M2){
+        *M1 = P[i];
+        *M2 = P[i + 1];
         i++;
     }
 
     *P1 = i - 1;
     *P2 = i;
 
-    printf("\nNumeros escolhidos: %d na posicao %d // e %d na posicao %d\n", t1, *P1, t2, *P2);
-
-    if(t1 < t2){ //t1 sempre será MAIOR que t2
-        swap(&t1, &t2);
+    if(M1 < M2){ //t1 sempre será MAIOR que t2
+        swap(M1, M2);
 
         swap(P1, P2);
     }
 
-    printf("\nnumeros depois do shuffle: %d na posicao %d // e %d na posicao %d\n", t1, *P1, t2, *P2);
-
     for(; i < N; i++){
-        if(P[i] > t1){
-            swap(&t1, &t2);
-            t1 = P[i];
+        if(P[i] > *M1){
+            swap(M1, M1);
+            *M1 = P[i];
 
             *P2 = *P1;
             *P1 = i;
         }
-        else if(P[i] > t2){
-            t2 = P[i];
+        else if(P[i] > *M2){
+            *M2 = P[i];
             *P2 = i;
         }
     }
-
-    *M1 = t1;
-    *M2 = t2;
 
     return;
 }
